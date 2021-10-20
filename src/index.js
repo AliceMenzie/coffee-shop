@@ -8,7 +8,7 @@ import { GraphQLClient, ClientContext } from 'graphql-hooks'
 const client = new GraphQLClient({
   url: "https://graphql.datocms.com/",
   headers: {
-    "Authorization": "Bearer 16a19257cffc54feeb04042aeeef1d",
+    Authorization: `Bearer ${process.env.REACT_APP_DATO_API_TOKEN}`,
   }
 });
 
