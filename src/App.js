@@ -1,53 +1,24 @@
-import { useQuery } from "graphql-hooks";
-import { Image } from "react-datocms";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Main from "./components/Main";
+import Coffees from "./components/Coffees";
+import Coffee from "./components/Coffee";
 import "./App.css";
 
 function App() {
-  const HOMEPAGE_QUERY = `{
-    homePage {
-      mainHeading
-      mainContent
-      mainHeroImage {
-        width
-        alt
-        title
-        responsiveImage {
-          alt
-          base64
-          bgColor
-          title
-          src
-          srcSet
-          sizes
-          height
-          webpSrcSet
-          width
-          aspectRatio
-        }
-      }
-    }
-  }`;
-
-  const { loading, error, data } = useQuery(HOMEPAGE_QUERY, {
-    variables: {
-      limit: 10,
-    },
-  });
-
-  if (loading) return "Loading...";
-  if (error) return "Something Bad Happened";
-
-  console.log(data);
-
   return (
-    <div className="App">
-      <h1>{data.homePage.mainHeading}</h1>
-
-      <Image className='hero-img' data={data.homePage.mainHeroImage.responsiveImage} />
-
-      <p>{data.homePage.mainContent}</p>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Main />
+        </Route>
+        <Route exact path="/products">
+          <Coffees />
+        </Route>
+        <Route exact path="/product/:id">
+          <Coffee />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
