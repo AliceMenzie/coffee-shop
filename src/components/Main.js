@@ -35,17 +35,20 @@ export default function Main() {
       });
     
       if (loading) return "Loading...";
-      if (error) return "Something Bad Happened";
+      if (error) return "Error: Something Bad Happened";
     
       console.log(data);
     
       return (
         <main className="main">
+          <div>
           <h1>{data.homePage.mainHeading}</h1>
-    
-          <Image className='hero-img' data={data.homePage.mainHeroImage.responsiveImage} />
-    
+          </div>
+          {/* <div></div>
+          <Image className='hero-img' data={data.homePage.mainHeroImage.responsiveImage} /> */}
+          <div>
           <p>{data.homePage.mainContent}</p>
+          </div>
         </main>
       );
 }
