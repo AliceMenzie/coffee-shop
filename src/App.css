@@ -1,8 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700&display=swap');
+
+* {
+  font-family: 'Titillium Web', sans-serif;
+}
+
 
 .App {
   text-align: center;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Titillium Web', sans-serif;
 }
 
 
@@ -60,7 +65,7 @@ div.hero-img {
 }
 
 
-/* -------------------- */
+/* --------Products page------------ */
 
 .products-container {
   margin: 3rem;
@@ -109,4 +114,15 @@ div.product-img {
 
 a.product-link {
   color: white;
+}
+
+/* --------Products Page: about------------ */
+
+.about-container h1 {
+  text-transform: uppercase;
+}
+
+.about-container p {
+  line-height: 1.6;
+
 }
